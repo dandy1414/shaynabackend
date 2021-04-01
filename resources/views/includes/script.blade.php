@@ -26,7 +26,7 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
-        .create(document.querySelector('.ckeditor'))
+        .create(document.querySelector('.ckedit'))
         .then(editor => {
             console.log(editor);
         })
