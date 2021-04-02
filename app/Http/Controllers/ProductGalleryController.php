@@ -103,6 +103,9 @@ class ProductGalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $photo = ProductGallery::findOrFail($id);
+        $photo->delete();
+
+        return redirect()->route('product-galleries.index');
     }
 }

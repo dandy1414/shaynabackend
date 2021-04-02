@@ -6,9 +6,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="box-title">Daftar Foto Barang</h4>
+                    <h4 class="box-title">Daftar Foto Barang <small>{{ $product->name }}</small></h4>
                 </div>
-                <div class="card-body--">
+                <div class="card-body">
                     <div class="table-stats order-table ov-h">
                         <table class="table">
                             <thead>
@@ -21,16 +21,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($photos as $photo)
+                                @forelse ($items as $item)
                                 <tr>
-                                    <td>{{ $photo->id }}</td>
-                                    <td>{{ $photo->product->name }}</td>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->product->name }}</td>
                                     <td>
-                                        <img src="{{ url($photo->photo) }}" alt="">
+                                        <img src="{{ url($item->photo) }}" alt="">
                                     </td>
-                                    <td>{{ $photo->is_default ? 'Ya': 'Tidak' }}</td>
+                                    <td>{{ $item->is_default ? 'Ya': 'Tidak' }}</td>
                                     <td>
-                                        <form action="{{ route('product-galleries.destroy', $photo->id) }}" method="POST" class="d-inline">
+                                        <form action="{{ route('product-galleries.destroy', $item->id) }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
                                             <button class="btn-danger btn-sm">
