@@ -28,7 +28,7 @@ class CheckoutRequest extends FormRequest
             'email' => 'required|max:255',
             'number' => 'required|max:255',
             'address' => 'required',
-            'transaction_total' => 'required|integer',
+            'transaction_total' => 'required',
             'transaction_status' => 'required|in:PENDING,FAILED,SUCCESS',
             'transaction_details' => 'required|array',
             'transaction_details.*' => 'integer|exists:products,id',
